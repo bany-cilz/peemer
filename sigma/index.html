@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PMR Web</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Phosphor Icons -->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+  />
+</head>
+<body>
+    <!-- • -->
+
+  <nav>
+    <div class="footers">
+      <img src="/pmi.png" alt="Logo_PMI">
+      <a class="f-class">PALANG MERAH REMAJA</a>
+    </div>
+
+    <div id="menu-item" class="menu-item">
+      <i class="ph ph-list"></i>
+    </div>
+    
+    <ul id="menu-list" class="hidden">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="materi.html">Materi</a></li>
+      <li><a href="keg.html">Kegiatan</a></li>
+      <li><a href="cr.html">Credit</a></li>
+      
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div id="main" class="main">
+      <div id="side-1" class="sidebar">
+        <h1 class="sidebar">AYO KITA MENGENAL</h1>
+        <h1 class="pmr">PMR di SMKN2 Bandung</h1>
+      </div>
+
+      <div class="card" onclick="showSection('mars')">
+        <div class="judul">MARS</div>
+        <div class="subJ">Mars PMR</div>
+      </div>
+
+      <div class="card" onclick="showSection('prinsip')">
+        <div class="judul">PRINSIP</div>
+        <div class="subJ">Prinsip PMR</div>
+      </div>
+
+      <div class="card" onclick="showSection('janji')">
+        <div class="judul">JANJI</div>
+        <div class="subJ">Janji PMR</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materinya -->
+  <section id="mars">
+    <h2>MARS PMR</h2>
+    <button class="back-btn" onclick="goHome ()">
+        <i class="ph ph-caret-double-left"></i>
+    </button>
+    <div class="materi-box">
+      <h3>Mars</h3>
+    <p>Palang merah Indonesia..</p>
+    <p>Sumber kasih umat manusia..</p>
+    <p>Warisan luhur nusa dan bangsa..</p>
+    <p>Wujud nyata pengayom pancasila..</p>
+    <p>Mendarmakan bakti bagi Ampera..</p>
+    <p>Tunaikan tugas suci tujuan PMI..</p>
+    <p>Di persada bunda Pertiwi..</p>
+    <p>Untuk umat manusia..</p>
+    <p>Diseluruh Dunia..</p>
+    <p>PMI menghantarkan jasa..</p>
+
+    <h3>Mars Selamat datang</h3>
+    <p>Selamat datang Bapak/Ibu.. (2x)</p>
+    <p>Selamat datang kami ucapkan</p>
+    <p>Selamat datang Bapak/Ibu.. (2x)</p>
+    <p></p>
+    <p></p>
+    </div>
+  </section>
+
+  <section id="prinsip">
+    <h2>PRINSIP-PRINSIP</h2>
+    <button class="back-btn" onclick="goHome ()">
+        <i class="ph ph-caret-double-left"></i>
+    </button>
+    <div class="materi-box">
+    <ol>
+      <li>Kemanusiaan</li>
+      <li>Kesamaan</li>
+      <li>Kenetralan</li>
+      <li>Kemandirian</li>
+      <li>Kesukarelaan</li>
+      <li>Kesatuan</li>
+      <li>Kesemestaan</li>
+    </ol>
+
+    <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">TRIBAKTI PMR</p>
+    <ol>
+        <li>Meningkatkan keterampilan Hidup</li>
+        <li>Bekerja dan berbakti dimasyarakat</li>
+        <li>Mempererat persahabatan nasional dan internasional</li>
+    </ol>
+    </div>
+  </section>
+
+  <section id="janji">
+    <h2>JANJI PMR</h2>
+    <button class="back-btn" onclick="goHome ()">
+        <i class="ph ph-caret-double-left"></i>
+    </button>
+    <div class="materi-box">
+      <p>kami Palang Merah Remaja Indonesia berjanji dengan disertai rasa
+penuh tanggungjawab dan bersungguh hati</p>
+    <ol>
+        <li>Bertakwa kepapa Tuhan yong Maha Esa</li>
+        <li>Berbakti kepada masyarakat</li>
+        <li>Mempertinggi keterampilan dan memelihara kesehatan kebersihan</li>
+        <li>Mempererat persahabatan nasional dan internasional</li>
+        <li>Menjaga nama baik Palang Merah Remaja dan Palang Merah Indonesia Dengan memegang teguh prinsip-prinsip kepalang merahan</li>
+    </ol>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="footer-container">
+  <div class="footer-bottom">
+    <p>PMR SMKN 2 BANDUNG</p>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

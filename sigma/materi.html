@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi PMR</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="footers">
+      <img src="/pmi.png" alt="Logo_PMI">
+      <a class="f-class">PALANG MERAH REMAJA</a>
+    </div>
+
+    <div id="menu-item" class="menu-item">
+      <i class="ph ph-list"></i>
+    </div>
+
+    <ul id="menu-list" class="hidden">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="materi.html" class="active">Materi</a></li>
+      <li><a href="keg.html">Kegiatan</a></li>
+      <li><a href="cr.html">Credit</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HALAMAN MATERI ===== -->
+  <div class="materi-page">
+    <aside class="sidebars" id="sidebar">
+      <input type="text" id="search" placeholder="Cari materi..." />
+      <ul id="materiList">
+        <li onclick="showMateri('sejarah')">SEJARAH PMI</li>
+        <li onclick="showMateri('7m')">7 MATERI PMR</li>
+        <li onclick="showMateri('gerakan')">GERAKAN PMI</li>
+        <li onclick="showMateri('pp1')">PERTOLONGAN PERTAMA (PP)</li>
+        <li onclick="showMateri('pk')">PERAWATAN KELUARGA (PK)</li>
+        <li onclick="showMateri('DD')">DONOR DARAH</li>
+        <li onclick="showMateri('ASB')">ASINCAN (AYO SIAGA BENCANA)</li>
+        <li onclick="showMateri('kr')">KESEHATAN REMAJA</li>
+        <li onclick="showMateri('tandu')">JENIS-JENIS TANDU</li>
+        <li onclick="showMateri('kpm')">KEPEMIMPINAN</li>
+        <li onclick="showMateri('luka')">LUKA</li>
+        <li onclick="showMateri('pp2')">PERTOLONGAN PERTAMA #2</li>
+        <li onclick="showMateri('pp3')">PERTOLONGAN PERTAMA #3</li>
+      </ul>
+    </aside>
+    <!-- style="margin-bottom: 15px;" -->
+    <div class="content-materi">
+      <div class="back-btns" onclick="goBack()">
+        <i class="ph ph-arrow-u-up-left"></i>
+      </div>
+
+      <div id="sejarah" class="materi-content active">
+        <h1>Sejarah Palang Merah Indonesia</h1>
+        <p style="margin-bottom: 15px;">Bapak Palang Merah Dunia Jean Hendry Dunant (JHD) lahir 8 Mei 19 1828</p>
+        <p style="margin-bottom: 15px;">Pada tahun 1859 terdapat perang di desa Solfering, Perang Itali dan Prancis.
+          Kebetulan JHD lewat karena mempunyai bisnis. Melihat pulahan tentara terluka dan kurangnya bantuan medis JHD
+          pun berinisiatif mengajukan diri untuk jadi Relawan. JHD menggunakan Gereja di Desa Castiglione sebagar rumah
+          sakit dururat Setelah kejadian tersebut JHD pulang ke negara asalnya Swiss, lalu menbuat sebuah buku berjudul
+          "A memory of Solferino" dengan nama lain "un Souvenir de solferina" Pada tahun 1862</p>
+        <p style="margin-bottom: 15px;">Pada tahun 1863, JHD mendirikan ICRC (internasional commite of Redross) tugas
+          ICRC adalah kegiatan kemanusiaan, memberikan bantuan darwat, medis, dan korban konflik bersenjata di dunia.
+          Lalu pada tahun 1864 terdapat Kompetitensi Jenawa sebanyak 4x yang Sekarang disebut sebagai palang merah</p>
+        <p>Pada tahun 1919 didirikan IFRC (Internasional Federation of Regroos) tugas mereka yg mengondisikan kegiatan
+          dan fasilitas, mengatur den melaksanakan bantuan dengan berkala besar</p>
+      </div>
+
+      <div id="7m" class="materi-content">
+        <h1>7 Materi PMR</h1>
+        <ol>
+          <li>Gerakan PMI</li>
+          <li>Pertolongan Pertama</li>
+          <li>Perawatan keluarga</li>
+          <li>Donor darah</li>
+          <li>Kesehatan remaja</li>
+          <li>Ayo siaga bencana (asincan)</li>
+          <li>Kepemimpinan</li>
+        </ol>
+      </div>
+
+      <div id="gerakan" class="materi-content">
+        <h1>Gerakan PMI</h1>
+        <p style="margin-bottom: 15px;">Dulu, Indonesia mengajukan konferensi palang merah dalam konferensi Nerkai,
+          Sayangnya ditolak pada 3 September 1945. Soekarno memerintahkan untuk membuat Palang Merah Indonesia (PMI)
+          Beliau Mengajukan perminkan kepada Dr. Buntaran Martoadmojo (Menteri kesehatan) lalu pada 5 September 1945 Dr.
+          Buntaran membuat panitia lima</p>
+        <ol style="margin-bottom: 15px;">
+          <li>Dr. R Mochtar</li>
+          <li>Dr. Baher Djohar</li>
+          <li>Dr. Joehana</li>
+          <li>Dr. Marzuki</li>
+          <li>Dr. Sinatala</li>
+        </ol>
+        <p>Akhirnya, 17 September 1945 terbentuklah PMI dengan Drs. Moh Hatta Sebagai ketua PMI Pertama. Karena 1 Negara
+          di bubarkan oleh pemerintahan Belanda pada tanggal 16 Januari 1950 PMI memiliki tugas mengurusi korban perang
+          sehingga PMI Pun diakui oleh dunia</p>
+      </div>
+
+      <div id="pp1" class="materi-content">
+        <h1>Pertolongan Pertama</h1>
+
+        <h3>Pengertian:</h3>
+        <p style="margin-bottom: 20px;">
+          Pemberian pertolongan segera kepada penderita sakit, cedera, atau kecelakaan yang memerlukan medis dasar.
+        </p>
+
+        <h3>Tujuan PP:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Menyelamatkan jiwa penderita</li>
+          <li>Mencegah cacat</li>
+          <li>Memberikan rasa nyaman dan menunjang proses penyembuhan</li>
+        </ul>
+
+        <h3>Kewajiban Pelaku PP:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Utamakan keselamatan</li>
+          <li>
+            Meminta bantuan atau rujukan, pelaku PP harus bertanggung jawab sampai bantuan rujukan mengambil alih
+            penanganan penderita
+          </li>
+          <li>Memberikan pertolongan dengan cepat dan tepat berdasarkan keadaan korban</li>
+          <li>Membantu pelaku PP lainnya</li>
+        </ul>
+
+        <h3>Keadaan Penolong PP:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Perkenalan diri</li>
+          <li>Menenangkan korban</li>
+          <li>Menanyakan solusi</li>
+        </ul>
+
+        <h3>Pedoman yang harus dipegang penolong PP:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Penolong mengamankan diri</li>
+          <li>Amankan korban</li>
+          <li>Tandai lokasi</li>
+          <li>Usahakan hubungi pihak berwajib</li>
+          <li>Tindakan penolong</li>
+        </ul>
+
+        <h3>Kasus yang membutuhkan PP:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Asma</li>
+          <li>Mual</li>
+          <li>Keseleo</li>
+          <li>Keram</li>
+          <li>Memar</li>
+          <li>Histeria</li>
+          <li>Lemah jantung</li>
+          <li>Keracunan</li>
+        </ul>
+
+        <h3>Tidak gawat dan tidak darurat:</h3>
+        <p style="margin-bottom: 4px;">
+          (Kondisi sakit namun tidak memerlukan pertolongan segera).
+        </p>
+        <ul style="margin-bottom: 20px;">
+          <li>Pusing</li>
+          <li>Pasien poliklinik</li>
+        </ul>
+
+        <h3>Gawat:</h3>
+        <p style="margin-bottom: 4px;">
+          (Kondisi memerlukan penanganan serius tapi tidak memerlukan penanganan cepat).
+        </p>
+        <ul style="margin-bottom: 20px;">
+          <li>Pasien luka berat</li>
+          <li>Demam</li>
+          <li>Keseleo</li>
+        </ul>
+
+        <h3>Darurat:</h3>
+        <p style="margin-bottom: 4px;">
+          (Kondisi yang mengancam nyawa dan membutuhkan penanganan cepat).
+        </p>
+        <ul style="margin-bottom: 20px;">
+          <li>Gigitan ular berbisa</li>
+          <li>Kejang</li>
+          <li>Kecelakaan hebat</li>
+        </ul>
+
+        <h3>Gawat Darurat:</h3>
+        <p style="margin-bottom: 4px;">
+          (Kondisi yang memiliki prioritas tertinggi. Apabila pasien darurat memerlukan waktu 10 menit, maka gawat
+          darurat lebih cepat dari 2 menit).
+        </p>
+        <ul style="margin-bottom: 20px;">
+          <li>Serangan jantung</li>
+          <li>Sulit bernapas</li>
+          <li>Stroke</li>
+        </ul>
+      </div>
+
+      <div id="pk" class="materi-content">
+        <h1>Perawatan Keluarga</h1>
+        <p>Perawatan keluarga merupakan perawatan yang dilakukan oleh keluarga itu sendiri dengan menggunakan alat yang
+          ada di lingkungan rumah.</p>
+        <h3>Tujuan PK:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Meningkatkan latihan kesehatan keluarga</li>
+          <li>Mempercepat proses penyembuhan</li>
+        </ul>
+        <h3>Tugas PK:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Mengenali gejala penyakit</li>
+          <li>Mengambil keputusan untuk melakukan tindakan PK</li>
+          <li>Memberikan perawatan kepada anggota keluarga yang sakit</li>
+          <li>Mempertahankan kehidupan sehat</li>
+          <li>Memelihara dan memanfaatkan fasilitas pelayanan kesehatan</li>
+        </ul>
+        <h3>Sasaran PK:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Penderita yang tidak dirawat di rumah sakit</li>
+          <li>Orang yang tidak dirawat di rumah sakit</li>
+          <li>Siswa-siswi yang mendapatkan pendidikan selanjutnya di masyarakat</li>
+        </ul>
+        <h3>Pelaksana PK:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Siswa PK</li>
+          <li>Setiap orang yang layak, sayang, dan mampu melakukan PK</li>
+          <li>Masyarakat</li>
+          <li>Keluarga pendidik</li>
+        </ul>
+        <h3>Langkah-langkah Pelaksanaan PK:</h3>
+        <ol style="margin-bottom: 20px;">
+          <li>Persiapan pelaksanaan PK</li>
+          <li>Menyiapkan alat dan bahan</li>
+          <li>Persiapan penderita</li>
+          <li>Pelaksanaan</li>
+          <li>Evaluasi</li>
+        </ol>
+        <h3>Hal-hal yang dilakukan dalam PK:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Membersihkan lingkungan penderita</li>
+          <li>Penggantian & pembersihan tempat tidur</li>
+          <li>Pemeriksaan denyut nadi serta tubuh menggunakan termometer</li>
+          <li>Menyiapkan makanan, minuman, dan obat-obatan</li>
+        </ul>
+        <h3>Alat-alat yang diperlukan:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Alat untuk tidur (bantal, selimut, kasur, alas ranjang)</li>
+          <li>Alat mandi</li>
+          <li>Termometer</li>
+          <li>Alat kebersihan</li>
+        </ul>
+        <h3>Tekanan Nadi Normal:</h3>
+        <table border="2" cellpadding="5" cellspacing="1" style="border-collapse: collapse; margin-bottom: 20px;">
+          <tr>
+            <th>Golongan</th>
+            <th>Denyut Nadi (x/menit)</th>
+          </tr>
+          <tr>
+            <td>Bayi baru lahir</td>
+            <td>120–140</td>
+          </tr>
+          <tr>
+            <td>Bayi</td>
+            <td>110–130</td>
+          </tr>
+          <tr>
+            <td>Anak 4–7 tahun</td>
+            <td>80–120</td>
+          </tr>
+          <tr>
+            <td>Anak lebih dari 7 tahun</td>
+            <td>80–90</td>
+          </tr>
+          <tr>
+            <td>Remaja / Dewasa</td>
+            <td>60–80</td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="DD" class="materi-content">
+        <h1>Donor Darah</h1>
+        <h3>Jenis Golongan Darah</h3>
+        <table border="2" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 20px;">
+          <tr>
+            <th>Aglutinogen (Antigen)<br>(terdapat dalam sel darah merah)</th>
+            <th>Aglutinin (Antibodi)<br>(terdapat dalam serum)</th>
+            <th>Genotip</th>
+            <th>Golongan Darah</th>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Anti-B</td>
+            <td>OA / AA</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Anti-A</td>
+            <td>OB / BB</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>AB</td>
+            <td>-</td>
+            <td>AB</td>
+            <td>AB</td>
+          </tr>
+          <tr>
+            <td>O</td>
+            <td>Anti-A & Anti-B</td>
+            <td>OO</td>
+            <td>O</td>
+          </tr>
+        </table>
+
+        <h3>Fungsi Darah antara lain:</h3>
+        <ol style="margin-bottom: 20px;">
+          <li>Mengangkut oksigen dari paru-paru ke sel-sel tubuh.</li>
+          <li>Mengangkut karbon dioksida dari sel-sel tubuh ke paru-paru untuk dikeluarkan.</li>
+          <li>Mengganti sel-sel rusak.</li>
+          <li>Jika seseorang mengalami kehilangan darah yang menyebabkan berkurangnya darah, jiwanya bisa terancam dan
+            perlu transfusi darah.</li>
+          <li>Donor darah merupakan kegiatan menyumbangkan darah untuk tujuan transfusi darah bagi yang membutuhkan.
+          </li>
+        </ol>
+
+        <h3>Transfusi Darah</h3>
+        <p style="margin-bottom: 20px;">
+          Proses pemindahan darah seseorang yang sehat dan memenuhi persyaratan kepada orang yang membutuhkan darah.
+        </p>
+        <p style="margin-bottom: 20px;">
+          Darah yang dipindahkan dapat berupa darah lengkap atau komponen darah.
+        </p>
+        <ul style="margin-bottom: 20px;">
+          <li><strong>Darah lengkap:</strong> darah yang mengandung seluruh komponen darah.</li>
+        </ul>
+
+        <h3>Komponen Darah terdiri dari:</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Plasma darah</li>
+          <li>Sel darah merah</li>
+          <li>Sel darah putih</li>
+          <li>Keping darah (trombosit)</li>
+        </ul>
+
+        <h3>Donor Darah Sukarela</h3>
+        <ul style="margin-bottom: 20px;">
+          <li><strong>Donor darah sukarela (DDS):</strong> seseorang yang menyumbangkan darahnya dengan sukarela tanpa
+            pamrih untuk siapa pun.</li>
+          <li><strong>Donor darah pengganti (DDP):</strong> seseorang yang diminta untuk mendonorkan darahnya kepada
+            seseorang yang diketahui kepada siapa darah tersebut diberikan.</li>
+        </ul>
+
+        <h3>Syarat Donor Darah</h3>
+        <ul style="margin-bottom: 20px;">
+          <li>Laki-laki/wanita berusia 18–60 tahun.</li>
+          <li>Sehat jasmani dan rohani menurut pemeriksaan dokter.</li>
+          <li>Kadar hemoglobin minimal 12,5 g/dl.</li>
+          <li>Tekanan sistolik 100–180 mmHg dan diastolik 50–100 mmHg.</li>
+          <li>Tidak menderita penyakit beresiko tinggi seperti HIV/AIDS, hepatitis, sifilis, jantung, paru, ginjal,
+            kencing manis, kejang, kanker, atau penyakit kulit kronis.</li>
+          <li>Bagi wanita yang sedang haid, hamil, menyusui tidak disarankan mendonorkan darahnya.</li>
+        </ul>
+
+        <h3>Manfaat Donor Darah</h3>
+        <ol style="margin-bottom: 20px;">
+          <li>Menyelamatkan jiwa seseorang yang membutuhkan darah.</li>
+          <li>Mendapatkan kepuasan batin karena telah membantu sesama.</li>
+          <li>Menjadi latihan jadi pribadi yang peduli, ikhlas, dan sehat.</li>
+          <li>Jika dilakukan secara teratur, donor darah dapat menstimulasi tubuh untuk memproduksi darah baru yang
+            lebih segar.</li>
+          <li>Dapat bergabung dengan organisasi PMI untuk menolong sesama.</li>
+          <li>Aktif dalam kegiatan kemanusiaan.</li>
+          <li>Meningkatkan kesadaran sosial dan kepedulian terhadap sesama.</li>
+        </ol>
+      </div>
+
+      <div id="ASB" class="materi-content">
+        <h1>ASINCAN (Ayo Siaga Benacana)</h1>
+        <p>...</p>
+      </div>
+
+      <div id="kr" class="materi-content">
+        <h1>Kesehatan Remaja</h1>
+        <p>...</p>
+      </div>
+
+      <div id="tandu" class="materi-content">
+        <h1>Jenis-Jenis Tandu</h1>
+        <p>...</p>
+      </div>
+
+      <div id="kpm" class="materi-content">
+        <h1>Kepemimpinan</h1>
+        <p>...</p>
+      </div>
+
+      <div id="luka" class="materi-content">
+        <h1>Luka</h1>
+        <p>...</p>
+      </div>
+
+
+      <div id="pp2" class="materi-content">
+        <h1>Pertolongan Pertama #2</h1>
+        <p>...</p>
+      </div>
+
+
+      <div id="pp3" class="materi-content">
+        <h1>Pertolongan Pertama #3</h1>
+        <p>...</p>
+      </div>
+
+      <!-- Tambahkan lainnya sesuai kebutuhan -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
