@@ -1,0 +1,14 @@
+/* Reset and base styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+body {
+  background-color: rgb(243, 243, 243);
+}

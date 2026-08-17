@@ -1,0 +1,32 @@
+/* Sidebar related styles */
+.sidebar {
+  background-color: rgba(243, 243, 243, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding-top: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.pmr { display:flex; justify-content:center; align-items:center; color: rgb(233,0,0); font-family:cursive; font-weight:700; }
+
+.sidebars {
+  width: 280px;
+  background-color: #f2f2f2;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+.sidebars::-webkit-scrollbar { width: 6px; }
+.sidebars::-webkit-scrollbar-thumb { background-color: #cecece; border-radius: 3px; }
+.sidebars input { padding: 10px; border: 1px solid #ff0000; border-radius: 5px; margin-bottom: 1rem; font-size: 0.9rem; }
+.sidebars ul { list-style:none; display:flex; flex-direction:column; gap:10px; padding:0; margin:0; }
+.sidebars li { padding:10px; border-radius:5px; cursor:pointer; transition: background 0.2s, color 0.2s }
+.sidebars li:hover { background-color: #ffeaea }
+.sidebars li.active { background-color: #c0c0c0; color: rgb(0,0,0); }
+.sidebars.show { transform: translateX(0); }

@@ -1,0 +1,64 @@
+/* Layout, sections, main content */
+.container {
+  padding-top: 70px;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: opacity 0.4s ease;
+}
+
+.main.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+section {
+  display: none;
+  padding: 50px 30px;
+  animation: fadeIn 0.3s ease;
+  text-align: center;
+}
+
+section.active { display: block; }
+
+section h2 {
+  color: rgb(0,0,0);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.materi-box {
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgb(243, 243, 243);
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 1px 4px 9px rgb(0, 0, 0);
+  align-items: center;
+}
+
+section p, section ol { font-size: 1rem; line-height: 1.6; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Generic utility / back button */
+.back-btn { position: fixed; top: 120px; left: 20px; background: none; border: none; font-size: 36px; color: black; cursor: pointer; transition: 0.2s }
+
+.materi-page { display: flex; height: calc(100vh - 60px); overflow: hidden; }
+
+/* Materi content blocks */
+.materi-content { display:none; padding:2rem; border-radius:8px; animation: fadeIn 0.3s ease; }
+.materi-content.active { display:block; }
+.materi-content h1 { text-align:center; font-weight:800; margin-bottom:1.5rem; }

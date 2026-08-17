@@ -1,0 +1,20 @@
+/* Cards and basic content components */
+.card {
+  width: 40%;
+  background-color: #e6e6e6;
+  border-radius: 9px;
+  padding: 13px 21px;
+  margin-top: 15px;
+  margin-bottom: 0 auto;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 1px 3px 8px rgb(0, 0, 0);
+}
+
+.card:hover { transform: scale(1.07); }
+
+.judul { font-size: 26px; font-family: monospace; font-weight: 700; }
+.subJ { font-size: 19px; color: #555; }
+.card:hover .subJ { color: #ff0000; }
+
+.note { text-align:center; color:var(--muted); font-size:13px; margin-top:6px }

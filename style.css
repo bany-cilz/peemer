@@ -1,14 +1,18 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import url("css/00-reset.css");
+@import url("css/10-navbar.css");
+@import url("css/20-layout.css");
+@import url("css/30-cards.css");
+@import url("css/40-sidebars.css");
+@import url("css/50-chat.css");
+@import url("css/60-gallery.css");
+@import url("css/70-modals.css");
+@import url("css/80-footer.css");
+@import url("css/90-responsive.css");
 
-body {
-  background-color: rgb(243, 243, 243);
-}
-
-/* === Navbar === */
+/* This file is the single entrypoint for the site styles.
+   Individual component rules live in css/*.css to make maintenance
+   and editing in VS Code easier. Do not modify this file to edit
+   component styles — edit files under the css/ folder instead. */
 nav {
   background-color: red;
   display: flex;
@@ -64,9 +68,21 @@ nav ul li a:hover {
 }
 
 .container {
-  padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding-bottom: 70px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding:  20px;
+  gap: 20px;
+}
+
+.maskod {
+  width: 300px; /* Ukuran lebar foto */
+  height: 400px; /* Ukuran tinggi foto */
+  object-fit: cover; /* Agar gambar tidak gepeng */
+  border-radius: 12px;
+  
 }
 
 /* === Responsive Navbar === */
@@ -478,94 +494,113 @@ section ol {
 }
 
 
-/* ==== GALLERY ==== */
+/* ==== GALLERY & UPLOADER ==== */
+/* Gallery grid: 5 columns x up to 3 rows (15 slots) */
 .gallery-container {
-  margin-top: 100px;
-  padding: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  margin: 40px auto;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 160px;
+  gap: 18px;
+  padding: 20px;
 }
 
-.gallery-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.gallery-card:hover {
-  transform: translateY(-5px);
-}
-
-.gallery-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.gallery-card p {
-  text-align: center;
-  padding: 10px;
-  font-weight: 600;
-  border-top: 1px solid #ccc;
-}
-
-/* ==== LIGHTBOX ==== */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.lightbox.active {
+/* Uploader area */
+.uploader {
+  max-width: 1200px;
+  margin: 12px auto;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
   display: flex;
-  animation: fadeIn 0.4s ease forwards;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.uploader .info { flex: 1; min-width: 220px; }
+.uploader .small { font-size: 13px; color: #666; }
+.uploader-controls { display: flex; gap: 8px; align-items: center; flex-basis: 360px; }
+.file-label { display: inline-block; padding: 8px 12px; background: #d60000; color: #fff; border-radius: 6px; cursor: pointer; }
+.uploader input[type=file]{ display: none; }
+.uploader input[type=text]{ padding: 8px; border: 1px solid #ddd; border-radius: 6px; }
+.actions { display: flex; gap: 8px; align-items: center; }
+
+/* Card styles */
+.gallery-card { position: relative; overflow: hidden; border-radius: 8px; background: #fff; display: flex; flex-direction: column; }
+.gallery-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 10px; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6)); color: #fff; font-size: 14px; }
+.card-controls { position: absolute; top: 8px; right: 8px; display: flex; gap: 6px; }
+.btn-icon { background: rgba(0,0,0,0.45); color: #fff; border-radius: 6px; padding: 6px; cursor: pointer; border: none; }
+
+.empty { display: flex; align-items: center; justify-content: center; color: #666; font-size: 14px; padding: 8px; }
+
+/* Lightbox (reuse existing naming but ensure it matches markup) */
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); align-items: center; justify-content: center; z-index: 9999; }
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 95%; max-height: 90%; border-radius: 8px; }
+.lb-caption { position: absolute; bottom: 30px; color: #fff; padding: 8px; font-size: 16px; text-align: center; }
+.lightbox .close { position: absolute; top: 18px; right: 18px; background: #fff; border-radius: 50%; padding: 8px; cursor: pointer; }
+
+/* Responsive breakpoints: decrease columns on smaller screens */
+@media (max-width: 1100px) { .gallery-container { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 900px)  { .gallery-container { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 140px; } }
+@media (max-width: 600px)  { .gallery-container { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; } .uploader { padding: 10px; } }
+@media (max-width: 420px)  { .gallery-container { grid-template-columns: 1fr; grid-auto-rows: 220px; } }
+
+/* Card hover preview */
+.gallery-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.gallery-card:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+
+/* ==== INSTAGRAM-LIKE MODAL ==== */
+.ig-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); align-items: center; justify-content: center; z-index: 10000; padding: 20px; }
+.ig-modal.active { display: flex; }
+.ig-modal-content { background: #fff; width: 90%; max-width: 1100px; max-height: 90vh; border-radius: 10px; overflow: hidden; display: grid; grid-template-columns: 1fr 360px; }
+.ig-left { background: #000; display: flex; align-items: center; justify-content: center; }
+.ig-left img { width: 100%; height: 100%; object-fit: contain; background: #000; }
+.ig-right { padding: 20px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+.ig-right h3 { margin: 0; font-size: 20px; }
+.ig-right p { color: #333; line-height: 1.5; }
+.ig-actions { display: flex; gap: 8px; margin-top: auto; }
+.ig-close { position: absolute; top: 18px; right: 18px; background: rgba(0,0,0,0.6); color: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; }
+
+/* Editable states */
+.ig-editable { border: 1px dashed #ccc; padding: 8px; border-radius: 6px; }
+
+/* Modal responsive: stack vertically on small screens */
+@media (max-width: 900px) {
+  .ig-modal-content { grid-template-columns: 1fr; }
+  .ig-right { max-height: 40vh; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Card hover preview */
+.gallery-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.gallery-card:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+
+/* ==== INSTAGRAM-LIKE MODAL ==== */
+.ig-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); align-items: center; justify-content: center; z-index: 10000; padding: 20px; }
+.ig-modal.active { display: flex; }
+.ig-modal-content { background: #fff; width: 90%; max-width: 1100px; max-height: 90vh; border-radius: 10px; overflow: hidden; display: grid; grid-template-columns: 1fr 360px; }
+.ig-left { background: #000; display: flex; align-items: center; justify-content: center; }
+.ig-left img { width: 100%; height: 100%; object-fit: contain; background: #000; }
+.ig-right { padding: 20px; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+.ig-right h3 { margin: 0; font-size: 20px; }
+.ig-right p { color: #333; line-height: 1.5; }
+.ig-actions { display: flex; gap: 8px; margin-top: auto; }
+.ig-close { position: absolute; top: 18px; right: 18px; background: rgba(0,0,0,0.6); color: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; }
+
+/* Editable states */
+.ig-editable { border: 1px dashed #ccc; padding: 8px; border-radius: 6px; }
+
+/* Modal responsive: stack vertically on small screens */
+@media (max-width: 900px) {
+  .ig-modal-content { grid-template-columns: 1fr; }
+  .ig-right { max-height: 40vh; }
 }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.3);
-  transition: transform 0.3s ease;
-}
+/* End of gallery section */
 
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 36px;
-  color: white;
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  color: rgb(200,200,200);
-}
-
-/* ==== RESPONSIVE ==== */
-@media (max-width: 768px) {
-  .gallery-container {
-    padding: 20px;
-    margin-top: 80px;
-  }
-}
 
 .credit-section {
   min-height: 80vh;

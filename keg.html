@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Materi PMR</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Kegiatan PMR - Galeri</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 </head>
 
 <body>
-  <!-- ===== NAVBAR ===== -->
+ 
   <nav>
     <div class="footers">
-      <img src="pmi.png" alt="Logo_PMI">
+      <img src="img/pmi.png" alt="Logo_PMI">
       <a class="f-class">PALANG MERAH REMAJA</a>
     </div>
 
@@ -30,29 +30,45 @@
     </ul>
   </nav>
 
-  <section class="gallery-container">
-    <div class="gallery-card">
-      <img src="ingvosh.png" alt="Kegiatan 1">
-      <p>test ipos</p>
+  <!-- Upload UI -->
+  <section class="uploader" aria-labelledby="upload-heading">
+    <div class="info">
+      <h2 id="upload-heading">Aktivitas PMR SMKN 2 BANDUNG</h2>
+      <div class="small">Telusuri Aktivitas Kita</div>
     </div>
-    <div class="gallery-card">
-      <img src="ijadd.jpeg" alt="Kegiatan 2">
-      <p>test 2</p>
-    </div>
-    <div class="gallery-card">
-      <img src="/img/foto3.jpg" alt="Kegiatan 3">
-      <p>test 3</p>
-    </div>
-    <div class="gallery-card">
-      <img src="/img/foto4.jpg" alt="Kegiatan 4">
-      <p>test 3</p>
+    <div class="uploader-controls">
+      <label for="fileInput" class="file-label">Pilih Foto</label>
+      <input id="fileInput" type="file" accept="image/*">
+      <input id="titleInput" type="text" placeholder="Activity Title" aria-label="Activity Title">
+      <input id="descInput" type="text" placeholder="Description" aria-label="Activity Description">
+      <div class="actions">
+        <button id="addBtn" class="btn-icon" title="Tambah">📤</button>
+      </div>
     </div>
   </section>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="close-btn" id="closeBtn"><i class="ph ph-x"></i></span>
-    <img src="" alt="Preview" id="lightboxImg">
+  <!-- Gallery grid (fixed 15 slots visually) -->
+  <section id="gallery" class="gallery-container" aria-live="polite">
+    <!-- JS will populate up to 15 cards; empty slots show placeholders -->
+  </section>
+
+  <!-- Instagram-like Modal -->
+  <div id="igModal" class="ig-modal" role="dialog" aria-hidden="true">
+    <div class="ig-modal-content">
+      <button class="ig-close" id="igClose" aria-label="Tutup">✕</button>
+      <div class="ig-left">
+        <img id="igImage" src="" alt="Foto kegiatan">
+      </div>
+      <div class="ig-right">
+        <h3 id="igTitle">Judul Kegiatan</h3>
+        <p id="igDesc">Deskripsi kegiatan akan tampil di sini.</p>
+        <div class="ig-actions">
+          <button id="igEdit" class="btn-icon">Edit</button>
+          <button id="igSave" class="btn-icon" style="display:none">Save</button>
+          <button id="igDelete" class="btn-icon">Hapus</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
